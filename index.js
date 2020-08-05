@@ -11,7 +11,10 @@ if (process.env.APPDYNAMICS_CONTROLLER_HOST_NAME)
   });
 
 if (process.env.ES_ADDON_APM_HOST)
-  require("elastic-apm-node").start()
+  require("elastic-apm-node").start({
+    secretToken: process.env.ES_ADDON_APM_AUTH_TOKEN,
+    serverUrl: process.env.ES_ADDON_APM_HOST
+  })
 
 // Demo
 const { spawn } = require("child_process");
