@@ -12,6 +12,7 @@ if (process.env.APPDYNAMICS_CONTROLLER_HOST_NAME)
 
 if (process.env.ES_ADDON_APM_HOST)
   require("elastic-apm-node").start({
+    serviceName: process.env.SERVICE_NAME,
     secretToken: process.env.ES_ADDON_APM_AUTH_TOKEN,
     serverUrl: process.env.ES_ADDON_APM_HOST
   })
