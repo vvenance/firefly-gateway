@@ -10,7 +10,7 @@ if (process.env.APPDYNAMICS_CONTROLLER_HOST_NAME)
     nodeName: process.env.INSTANCE_ID // The controller will automatically append the node name with a unique number
   });
 
-if (process.env.ELASTIC_APM_SERVER_URLS)
+if (process.env.ES_ADDON_APM_HOST)
   require("elastic-apm-node").start()
 
 // Demo
